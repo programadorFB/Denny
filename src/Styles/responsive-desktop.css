@@ -1,0 +1,184 @@
+/* Desktop Small (1200px - 1439px) */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+  :root {
+    --container-max-width: 1000px;
+    --container-padding: 2.5rem;
+    --font-size-base: 1.375rem;
+    --font-size-small: 1.25rem;
+    --font-size-large: 1.5rem;
+    --spacing-small: 1.25rem;
+    --spacing-medium: 2.5rem;
+    --spacing-large: 3rem;
+    --spacing-xlarge: 4rem;
+    --border-radius: 18px;
+    --grid-gap: 1.25rem;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+
+  /* Layout adjustments for desktop */
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xlarge);
+  }
+
+  /* Chart grid - desktop layout */
+  .chart-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .chart-item {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .chart-item .multiplier { 
+    font-size: 1.25rem; 
+  }
+
+  .chart-item .time { 
+    font-size: 1rem; 
+  }
+
+  /* Selector grid - 2x2 for desktop */
+  .selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xlarge);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .selector-gif {
+    width: 280px;
+  }
+
+  /* Enhanced hourly stats */
+  .hourly-stats-section {
+    padding: var(--spacing-large);
+  }
+
+  .stats-column h4 {
+    font-size: 1.25rem;
+  }
+
+  .stats-column p {
+    font-size: 1.125rem;
+  }
+
+  .stats-column li {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-small);
+  }
+
+  .stats-divider {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Hero section for desktop */
+  .hero-section {
+    padding: var(--spacing-xlarge);
+  }
+
+  .hero-section .check-icon {
+    font-size: 6rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  /* Line chart container */
+  .line-chart-container {
+    height: 300px;
+  }
+
+  /* Show more button */
+  .show-more-btn {
+    font-size: 1.125rem;
+    padding: var(--spacing-large);
+  }
+}
+
+/* Desktop Large (1440px - 1919px) */
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  :root {
+    --container-max-width: 1200px;
+    --container-padding: 3rem;
+    --font-size-base: 1.5rem;
+    --font-size-small: 1.375rem;
+    --font-size-large: 1.625rem;
+    --spacing-small: 1.5rem;
+    --spacing-medium: 3rem;
+    --spacing-large: 4rem;
+    --spacing-xlarge: 5rem;
+    --border-radius: 20px;
+    --grid-gap: 1.5rem;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.375rem; }
+
+  /* Chart grid - large desktop */
+  .chart-grid {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  .chart-item {
+    padding: 2rem 1.5rem;
+  }
+
+  .chart-item .multiplier { 
+    font-size: 1.375rem; 
+  }
+
+  .chart-item .time { 
+    font-size: 1.125rem; 
+  }
+
+  /* Selector grid - 2x2 with larger elements */
+  .selector-gif {
+    width: 320px;
+  }
+
+  /* Enhanced stats for large desktop */
+  .stats-column h4 {
+    font-size: 1.375rem;
+  }
+
+  .stats-column p {
+    font-size: 1.25rem;
+  }
+
+  .stats-column li {
+    font-size: 1.375rem;
+  }
+
+  .stats-divider {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Hero section large desktop */
+  .hero-section .check-icon {
+    font-size: 7rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.25rem;
+  }
+
+  /* Line chart container */
+  .line-chart-container {
+    height: 350px;
+  }
+}

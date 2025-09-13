@@ -1,0 +1,208 @@
+/* 
+ * ARQUIVO PRINCIPAL DE IMPORTAÇÃO RESPONSIVA
+ * Importe este arquivo no seu App.css ou component principal
+ */
+
+/* Importação dos arquivos CSS responsivos na ordem correta */
+@import url('./responsive-base.css');
+@import url('./responsive-mobile.css');
+@import url('./responsive-tablet.css');
+@import url('./responsive-desktop.css');
+@import url('./responsive-4k.css');
+
+/* 
+ * Utilitários adicionais para responsividade
+ */
+
+/* Container queries para suporte futuro */
+@supports (container-type: inline-size) {
+  .app-container {
+    container-type: inline-size;
+  }
+  
+  @container (min-width: 768px) {
+    .chart-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  }
+}
+
+/* Preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .app-container {
+    box-shadow: none;
+    max-width: none;
+    background-color: white;
+    color: black;
+  }
+  
+  .header-gif,
+  .selector-gif {
+    display: none;
+  }
+  
+  .show-more-btn {
+    display: none;
+  }
+  
+  .chart-selector-section {
+    background-image: none;
+  }
+  
+  .chart-selector-section::before {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-green: #00ff00;
+    --light-green: #0080ff;
+    --purple: #ff00ff;
+    --text-light: #ffffff;
+    --text-dark: #cccccc;
+    --border-color: #ffffff;
+  }
+  
+  .chart-item {
+    border: 2px solid currentColor;
+  }
+  
+  .selector-card {
+    border: 2px solid var(--primary-green);
+  }
+}
+
+/* Dark mode específico (caso o usuário force) */
+@media (prefers-color-scheme: light) {
+  /* Mantemos o tema escuro mesmo em modo claro, mas podemos adicionar variações */
+  .app-container {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Orientação landscape em mobile */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .hero-section {
+    padding: var(--spacing-small) var(--spacing-medium);
+  }
+  
+  .hero-section h1 {
+    font-size: 1rem;
+  }
+  
+  .hero-section .check-icon {
+    font-size: 2.5rem;
+  }
+  
+  .chart-selector-section {
+    padding: var(--spacing-medium);
+  }
+  
+  .selector-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .selector-gif {
+    width: 80px;
+  }
+}
+
+/* Hover states apenas para dispositivos que suportam */
+@media (hover: hover) and (pointer: fine) {
+  .chart-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .chart-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .selector-card {
+    transition: all 0.3s ease;
+  }
+  
+  .selector-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .chart-item,
+  .selector-card,
+  .show-more-btn {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  .selector-card {
+    padding: var(--spacing-large);
+  }
+  
+  .show-more-btn {
+    padding: var(--spacing-large) var(--spacing-medium);
+    font-size: 1.125rem;
+  }
+}
+
+/* Acessibilidade - foco visível */
+.chart-item:focus,
+.selector-card:focus,
+.show-more-btn:focus {
+  outline: 3px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+/* Estados de loading para imagens */
+.header-gif,
+.selector-gif {
+  background-color: var(--component-bg);
+  min-height: 50px;
+}
+
+.header-gif[src=""],
+.selector-gif[src=""] {
+  background-image: linear-gradient(90deg, var(--component-bg) 25%, rgba(255,255,255,0.1) 50%, var(--component-bg) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Ajustes para densidade de pixels */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .chart-item .multiplier,
+  .chart-item .time {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Utilitários de debug (remover em produção) */
+/*
+.debug * {
+  outline: 1px solid red;
+}
+
+.debug .chart-grid {
+  outline: 2px solid blue;
+}
+
+.debug .selector-grid {
+  outline: 2px solid green;
+}
+*/

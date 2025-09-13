@@ -1,0 +1,225 @@
+/* Desktop XL (1920px - 2559px) */
+@media screen and (min-width: 1920px) and (max-width: 2559px) {
+  :root {
+    --container-max-width: 1400px;
+    --container-padding: 4rem;
+    --font-size-base: 1.625rem;
+    --font-size-small: 1.5rem;
+    --font-size-large: 1.75rem;
+    --spacing-small: 2rem;
+    --spacing-medium: 4rem;
+    --spacing-large: 5rem;
+    --spacing-xlarge: 6rem;
+    --border-radius: 25px;
+    --grid-gap: 2rem;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.5rem; }
+
+  /* Chart grid - XL desktop */
+  .chart-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .chart-item {
+    padding: 2.5rem 2rem;
+  }
+
+  .chart-item .multiplier { 
+    font-size: 1.5rem; 
+  }
+
+  .chart-item .time { 
+    font-size: 1.25rem; 
+  }
+
+  /* Selector grid - can go 4 columns on very large screens */
+  .selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+  }
+
+  .selector-gif {
+    width: 400px;
+  }
+
+  /* Stats for XL screens */
+  .stats-column h4 {
+    font-size: 1.5rem;
+  }
+
+  .stats-column p {
+    font-size: 1.375rem;
+  }
+
+  .stats-column li {
+    font-size: 1.5rem;
+  }
+
+  .stats-divider {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Hero section XL */
+  .hero-section .check-icon {
+    font-size: 8rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Line chart container */
+  .line-chart-container {
+    height: 400px;
+  }
+
+  .show-more-btn {
+    font-size: 1.25rem;
+    padding: var(--spacing-large);
+  }
+}
+
+/* 4K and Ultra-Wide (2560px+) */
+@media screen and (min-width: 2560px) {
+  :root {
+    --container-max-width: 1800px;
+    --container-padding: 5rem;
+    --font-size-base: 1.875rem;
+    --font-size-small: 1.75rem;
+    --font-size-large: 2rem;
+    --spacing-small: 2.5rem;
+    --spacing-medium: 5rem;
+    --spacing-large: 6rem;
+    --spacing-xlarge: 8rem;
+    --border-radius: 30px;
+    --grid-gap: 2.5rem;
+  }
+
+  /* Typography for 4K */
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.75rem; }
+  h3 { font-size: 2.5rem; }
+  h4 { font-size: 1.875rem; }
+
+  /* 4K specific layout optimizations */
+  .app-container {
+    min-height: auto;
+  }
+
+  /* Chart grid for 4K */
+  .chart-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .chart-item {
+    padding: 3rem 2.5rem;
+    border-radius: 15px;
+  }
+
+  .chart-item .multiplier { 
+    font-size: 1.75rem; 
+    font-weight: 900;
+  }
+
+  .chart-item .time { 
+    font-size: 1.5rem; 
+  }
+
+  /* Selector grid - 4 columns for 4K */
+  .selector-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: none;
+  }
+
+  .selector-gif {
+    width: 350px;
+  }
+
+  .selector-card {
+    padding: var(--spacing-xlarge) var(--spacing-large);
+  }
+
+  /* 4K Stats section */
+  .hourly-stats-section {
+    padding: var(--spacing-xlarge);
+  }
+
+  .stats-column h4 {
+    font-size: 1.875rem;
+  }
+
+  .stats-column p {
+    font-size: 1.625rem;
+  }
+
+  .stats-column li {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .stats-divider {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Hero section for 4K */
+  .hero-section {
+    padding: var(--spacing-xlarge) var(--spacing-large);
+  }
+
+  .hero-section .check-icon {
+    font-size: 10rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  /* Line chart for 4K */
+  .line-chart-container {
+    height: 500px;
+  }
+
+  /* Enhanced buttons for 4K */
+  .show-more-btn {
+    font-size: 1.5rem;
+    padding: var(--spacing-xlarge);
+    border-radius: 15px;
+  }
+
+  /* Enhanced sections padding */
+  .full-chart-section,
+  .best-times-section,
+  .chart-selector-section {
+    padding: var(--spacing-xlarge);
+    margin-bottom: var(--spacing-xlarge);
+  }
+
+  .chart-selector-section {
+    padding: calc(var(--spacing-xlarge) * 2) var(--spacing-xlarge);
+  }
+
+  /* 4K specific improvements */
+  .chart-selector-section h3,
+  .best-times-section h3 {
+    margin-bottom: var(--spacing-xlarge);
+  }
+
+  /* Improved hover effects for 4K */
+  .selector-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-effect), 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .show-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(243, 156, 18, 0.4);
+  }
+}

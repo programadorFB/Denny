@@ -1,0 +1,165 @@
+/* Tablet Portrait (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --container-max-width: 600px;
+    --container-padding: 1.5rem;
+    --font-size-base: 1.125rem;
+    --font-size-small: 1rem;
+    --font-size-large: 1.25rem;
+    --spacing-small: 0.75rem;
+    --spacing-medium: 1.5rem;
+    --spacing-large: 2rem;
+    --spacing-xlarge: 2.5rem;
+    --border-radius: 12px;
+    --grid-gap: 0.75rem;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1rem; }
+
+  /* Chart grid for better tablet display */
+  .chart-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--grid-gap);
+  }
+
+  .chart-item {
+    padding: 1rem 0.75rem;
+  }
+
+  .chart-item .multiplier { 
+    font-size: 1rem; 
+  }
+
+  .chart-item .time { 
+    font-size: 0.75rem; 
+  }
+
+  /* Selector grid - 2x2 layout */
+  .selector-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-large);
+  }
+
+  .selector-gif {
+    width: 180px;
+  }
+
+  /* Hourly stats improvements */
+  .stats-column h4 {
+    font-size: 1rem;
+  }
+
+  .stats-column p {
+    font-size: 0.875rem;
+  }
+
+  .stats-column li {
+    font-size: 1rem;
+  }
+
+  .stats-divider {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Hero section */
+  .hero-section .check-icon {
+    font-size: 4rem;
+  }
+
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablet Landscape (1025px - 1199px) */
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+  :root {
+    --container-max-width: 800px;
+    --container-padding: 2rem;
+    --font-size-base: 1.25rem;
+    --font-size-small: 1.125rem;
+    --font-size-large: 1.375rem;
+    --spacing-small: 1rem;
+    --spacing-medium: 2rem;
+    --spacing-large: 2.5rem;
+    --spacing-xlarge: 3rem;
+    --border-radius: 15px;
+    --grid-gap: 1rem;
+  }
+
+  /* Typography adjustments */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.375rem; }
+  h4 { font-size: 1.125rem; }
+
+  /* Chart grid - wider layout */
+  .chart-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .chart-item {
+    padding: 1.25rem 1rem;
+  }
+
+  .chart-item .multiplier { 
+    font-size: 1.125rem; 
+  }
+
+  .chart-item .time { 
+    font-size: 0.875rem; 
+  }
+
+  /* Selector grid - 2x2 with more space */
+  .selector-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xlarge);
+  }
+
+  .selector-gif {
+    width: 220px;
+  }
+
+  /* Enhanced stats section */
+  .stats-column {
+    width: 45%;
+  }
+
+  .stats-column h4 {
+    font-size: 1.125rem;
+  }
+
+  .stats-column p {
+    font-size: 1rem;
+  }
+
+  .stats-column li {
+    font-size: 1.125rem;
+  }
+
+  .stats-divider {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Hero section enhancements */
+  .hero-section .check-icon {
+    font-size: 5rem;
+  }
+
+  .hero-section h1 {
+    font-size: 1.75rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  /* Line chart container */
+  .line-chart-container {
+    height: 250px;
+  }
+}

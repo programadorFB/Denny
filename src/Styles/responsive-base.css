@@ -1,0 +1,285 @@
+/* Base styles - Mobile First Approach */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+/* CSS Variables */
+:root {
+  --primary-green: #25d366;
+  --light-green: #34b7f1;
+  --purple: #8e44ad;
+  --dark-bg: #131418;
+  --component-bg: #22252a;
+  --text-light: #ffffff;
+  --text-dark: #a0a0a0;
+  --border-color: #3e4147;
+  --glow-effect: 0 0 15px rgba(37, 211, 102, 0.5);
+  --orange-btn: #f39c12;
+  --orange-btn-hover: #e67e22;
+  
+  /* Responsive Variables */
+  --container-width: 100%;
+  --container-max-width: 450px;
+  --container-padding: 1rem;
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-large: 1.125rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-xlarge: 2rem;
+  --border-radius: 10px;
+  --grid-gap: 0.5rem;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--font-size-base);
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  background-image: url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+  line-height: 1.5;
+}
+
+/* Container Base */
+.app-container {
+  width: var(--container-width);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  background-color: var(--dark-bg);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+}
+
+main {
+  padding: var(--container-padding);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0 0 var(--spacing-medium) 0;
+}
+
+h1 { font-size: 1.2rem; }
+h2 { font-size: 1.1rem; }
+h3 { font-size: 1rem; }
+h4 { font-size: 0.9rem; }
+
+/* Header */
+.app-header {
+  padding: 0;
+  background-color: var(--dark-bg);
+  line-height: 0;
+}
+
+.header-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: var(--spacing-medium);
+}
+
+.hero-section .check-icon {
+  color: var(--primary-green);
+  margin-bottom: var(--spacing-medium);
+  filter: drop-shadow(var(--glow-effect));
+}
+
+.hero-section h1 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+/* Full Chart Section */
+.full-chart-section {
+  padding: var(--spacing-medium);
+  background-color: var(--component-bg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-xlarge);
+  border: 1px solid var(--border-color);
+}
+
+.full-chart-section h2 {
+  color: var(--primary-green);
+  margin-bottom: var(--spacing-large);
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--grid-gap);
+}
+
+.chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.chart-item .multiplier { 
+  font-size: 0.9rem; 
+}
+
+.chart-item .time { 
+  font-size: 0.6rem; 
+  color: var(--text-dark); 
+}
+
+.chart-item.blue { background-color: var(--light-green); }
+.chart-item.green { background-color: var(--primary-green); }
+.chart-item.purple { background-color: var(--purple); }
+
+.show-more-btn {
+  width: 100%;
+  padding: var(--spacing-medium);
+  margin-top: var(--spacing-large);
+  background-color: var(--orange-btn);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.show-more-btn:hover {
+  background-color: var(--orange-btn-hover);
+}
+
+/* Chart Selector Section */
+.chart-selector-section {
+  padding: var(--spacing-xlarge) var(--spacing-medium);
+  background-image: url('https://i.imgur.com/your-image-url.jpg');
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  text-align: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: var(--spacing-xlarge);
+}
+
+.chart-selector-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(19, 20, 24, 1) 0%, rgba(19, 20, 24, 0.7) 50%, rgba(19, 20, 24, 0.2) 100%);
+}
+
+.selector-content {
+  position: relative;
+}
+
+.selector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-medium);
+  margin-top: var(--spacing-large);
+}
+
+.selector-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background-color: transparent;
+  padding: var(--spacing-large) var(--spacing-medium);
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: var(--border-radius);
+}
+
+.selector-card:hover {
+  background-color: rgba(37, 211, 102, 0.2);
+  box-shadow: var(--glow-effect);
+}
+
+.selector-gif {
+  width: 120px;
+  height: auto;
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Best Times Chart */
+.best-times-section {
+  background-color: var(--component-bg);
+  padding: var(--spacing-medium);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-xlarge);
+}
+
+.line-chart-container {
+  width: 100%;
+  height: 200px;
+}
+
+/* Hourly Stats */
+.hourly-stats-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-medium);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.stats-column {
+  width: 40%;
+  text-align: center;
+}
+
+.stats-column h4 {
+  color: var(--primary-green);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.stats-column p {
+  font-size: 0.7rem;
+  color: var(--text-dark);
+  margin-top: 0;
+  margin-bottom: var(--spacing-medium);
+}
+
+.stats-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-column li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-small);
+  font-size: 0.9rem;
+}
+
+.stats-divider {
+  width: 50px;
+  height: 50px;
+  background-image: url('https://i.imgur.com/your-central-graphic.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
